@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <script>
+        function calcularAmor() {
+            var nombre1 = document.getElementById("nombre1").value;
+            var nombre2 = document.getElementById("nombre2").value;
+            var amor = Math.floor(Math.random() * 101); // Genera un número aleatorio entre 0 y 100
+
+            document.getElementById("resultado").innerHTML = "The love between " + nombre1 + " and " + nombre2 + " is: " + amor + "%";
+
+            if (amor <= 25) {
+                document.getElementById("compatibilidad").innerHTML = "They are not compatible";
+            } else if (amor <= 49) {
+                document.getElementById("compatibilidad").innerHTML = "It might work out";
+            } else if (amor <= 75) {
+                document.getElementById("compatibilidad").innerHTML = "They are compatible";
+            } else {
+                document.getElementById("compatibilidad").innerHTML = "Go for it, my wolf";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Love Calculator</h1>
+    <label for="nombre1">Enter the name of the first person:</label>
+    <input type="text" id="nombre1"><br>
+    <label for="nombre2">Enter the name of the second person:</label>
+    <input type="text" id="nombre2"><br>
+    <button onclick="calcularAmor()">Calculate Love</button><br>
+    <p id="resultado"></p>
+    <p id="compatibilidad"></p>
+</body>
+</html>
